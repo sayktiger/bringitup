@@ -1,12 +1,14 @@
 export default class Difference{
     constructor(oldOfficer, newOfficer, items){
-        this.oldOfficer = document.querySelector(oldOfficer);
-        this.newOfficer = document.querySelector(newOfficer);
-        this.items = items;
-        this.oldItems = this.oldOfficer.querySelectorAll(this.items);
-        this.newItems = this.newOfficer.querySelectorAll(this.items);
-        this.oldCounter = 0;
-        this.newCounter = 0;
+        try{
+            this.oldOfficer = document.querySelector(oldOfficer);
+            this.newOfficer = document.querySelector(newOfficer);
+            this.items = items;
+            this.oldItems = this.oldOfficer.querySelectorAll(this.items);
+            this.newItems = this.newOfficer.querySelectorAll(this.items);
+            this.oldCounter = 0;
+            this.newCounter = 0;
+        }catch(e){}
     }
 
     hideItems(){
@@ -50,7 +52,9 @@ export default class Difference{
     }
 
     init(){
-        this.hideItems();
-        this.bindItems();
+        try{
+            this.hideItems();
+            this.bindItems();
+        }catch(e){}
     }
 }

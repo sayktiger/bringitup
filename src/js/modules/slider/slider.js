@@ -9,7 +9,9 @@ export default class Slider{
         autoplay,
         } = {}) {
             this.container = document.querySelector(container);
+            try{
             this.slides = this.container.children;
+            } catch(e){}
             this.btns = document.querySelectorAll(btns);
             this.slideIndex = 1;
             this.prev = document.querySelector(prev);
